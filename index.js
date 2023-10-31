@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const { hostname } = require("os");
 const app = express();
 
 app.use(cors());
@@ -19,6 +20,6 @@ app.get("/download", (req, res) => {
     }
   });
 });
-app.listen(3333, () => {
-  console.log("testando essa coisa doida");
+app.listen(3333, (host) => {
+  host: "0.0.0.0";
 });

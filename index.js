@@ -1,8 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-const { hostname } = require("os");
 const app = express();
-
+const port = process.env.PORT || 3333;
 app.use(cors());
 
 app.get("/", (req, res) => {
@@ -20,6 +19,4 @@ app.get("/download", (req, res) => {
     }
   });
 });
-app.listen(3333, (host) => {
-  host: "0.0.0.0";
-});
+app.listen(port);
